@@ -20,5 +20,11 @@ namespace FinishLine
             InitializeComponent();
             
         }
+
+        private void runnersToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RunnersForm runner = new RunnersForm();
+            runner.Show();
+        }
     }
 }

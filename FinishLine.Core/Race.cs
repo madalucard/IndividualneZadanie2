@@ -6,8 +6,7 @@ using System.Threading.Tasks;
 
 namespace FinishLine.Core
 {
-    public class ViewModel
+    class Race
     {
-        
     }
 }
