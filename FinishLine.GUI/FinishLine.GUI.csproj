@@ -33,6 +33,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="KBCsv, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cc96fa93a217f7a1, processorArchitecture=MSIL">
+      <HintPath>..\packages\KBCsv.5.0.0\lib\netstandard1.0\KBCsv.dll</HintPath>
+    </Reference>
+    <Reference Include="KBCsv.Extensions, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cc96fa93a217f7a1, processorArchitecture=MSIL">
+      <HintPath>..\packages\KBCsv.Extensions.5.0.0\lib\netstandard1.0\KBCsv.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="KBCsv.Extensions.Data, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc96fa93a217f7a1, processorArchitecture=MSIL">
+      <HintPath>..\packages\KBCsv.Extensions.Data.5.0.0\lib\net45\KBCsv.Extensions.Data.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.DirectoryServices" />
@@ -80,6 +89,7 @@
     <EmbeddedResource Include="RunnersForm.resx">
       <DependentUpon>RunnersForm.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

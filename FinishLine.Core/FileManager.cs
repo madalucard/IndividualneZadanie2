@@ -23,7 +23,10 @@ namespace FinishLine.Core
         /// <returns>List of Countries</returns>
         public static List<Country> GetCountries()
         {
-            using (var streamReader = new StreamReader(@"C:\Users\transformer3\source\repos\W3D5_IndividualProject2\Data\countries.csv"))
+            // loading data from work computer
+            // using (var streamReader = new StreamReader(@"C:\Users\transformer3\source\repos\W3D5_IndividualProject2\Data\countries.csv"))
+            // loading data from home computer
+            using (var streamReader = new StreamReader(@"C:\Users\madal\source\repos\IndividualneZadanie2\Data\countries.csv"))
             using (var csvReader = new CsvReader(streamReader))
             {
                 // CSV had reader record so we read that first
