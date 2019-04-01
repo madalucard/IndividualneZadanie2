@@ -35,7 +35,7 @@ namespace FinishLine.Core
         /// It will return actual Database
         /// </summary>
         /// <returns>Databese of runners</returns>
-        public Dictionary<int, Runner> GetRunnerDb()
+        public static Dictionary<int, Runner> GetRunnerDb()
         {
             // test purposes
             _dbRunners.Add(75, new Runner(75, "Martin", "Bielik", "Slovakia", 24, true));
@@ -52,7 +52,7 @@ namespace FinishLine.Core
         /// <param name="country">Country of runner</param>
         /// <param name="age">Runner's age</param>
         /// <param name="isMale">Runner's sex</param>
-        public void RunnerAdd(int id, string firstName, string lastName, string country, int age, bool isMale)
+        public static void RunnerAdd(int id, string firstName, string lastName, string country, int age, bool isMale)
         {
             // TODO save new runner to text file with method
             _dbRunners.Add(id ,new Runner(id, firstName, lastName, country, age, isMale));

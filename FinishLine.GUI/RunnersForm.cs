@@ -67,9 +67,9 @@ namespace FinishLine
                 _vm.IsMale = false;
             }
 
-            if (!string.IsNullOrEmpty(textBox1.Text))
+            if (!string.IsNullOrEmpty(txtStartingNum.Text))
             {
-                _vm.Id = int.Parse(textBox1.Text);
+                _vm.Id = int.Parse(txtStartingNum.Text);
             }
             else
             {

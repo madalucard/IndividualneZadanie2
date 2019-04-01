@@ -18,7 +18,6 @@ namespace FinishLine.Core
 
         public ViewModel()
         {
-            _rm.PopulateDB();
         }
 
         public void AddRunner()
