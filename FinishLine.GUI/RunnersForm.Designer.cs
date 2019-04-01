@@ -47,6 +47,9 @@
             this.btnSaveDb = new System.Windows.Forms.Button();
             this.btnLoadDb = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.txtBxRemove = new System.Windows.Forms.TextBox();
+            this.btnRemove = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
             this.grpBxRunnnerReg.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nmrAge)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -55,6 +58,9 @@
             // 
             // grpBxRunnnerReg
             // 
+            this.grpBxRunnnerReg.Controls.Add(this.label4);
+            this.grpBxRunnnerReg.Controls.Add(this.btnRemove);
+            this.grpBxRunnnerReg.Controls.Add(this.txtBxRemove);
             this.grpBxRunnnerReg.Controls.Add(this.btnRegister);
             this.grpBxRunnnerReg.Controls.Add(this.cmbCountry);
             this.grpBxRunnnerReg.Controls.Add(this.label3);
@@ -71,14 +77,14 @@
             this.grpBxRunnnerReg.Controls.Add(this.lblFirstnName);
             this.grpBxRunnnerReg.Location = new System.Drawing.Point(12, 12);
             this.grpBxRunnnerReg.Name = "grpBxRunnnerReg";
-            this.grpBxRunnnerReg.Size = new System.Drawing.Size(143, 426);
+            this.grpBxRunnnerReg.Size = new System.Drawing.Size(143, 420);
             this.grpBxRunnnerReg.TabIndex = 3;
             this.grpBxRunnnerReg.TabStop = false;
             this.grpBxRunnnerReg.Text = "Runner registration";
             // 
             // btnRegister
             // 
-            this.btnRegister.Location = new System.Drawing.Point(5, 381);
+            this.btnRegister.Location = new System.Drawing.Point(5, 311);
             this.btnRegister.Name = "btnRegister";
             this.btnRegister.Size = new System.Drawing.Size(132, 23);
             this.btnRegister.TabIndex = 13;
@@ -89,7 +95,7 @@
             // cmbCountry
             // 
             this.cmbCountry.FormattingEnabled = true;
-            this.cmbCountry.Location = new System.Drawing.Point(5, 167);
+            this.cmbCountry.Location = new System.Drawing.Point(5, 137);
             this.cmbCountry.Name = "cmbCountry";
             this.cmbCountry.Size = new System.Drawing.Size(132, 21);
             this.cmbCountry.TabIndex = 12;
@@ -97,7 +103,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 151);
+            this.label3.Location = new System.Drawing.Point(6, 121);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(43, 13);
             this.label3.TabIndex = 11;
@@ -105,7 +111,7 @@
             // 
             // txtStartingNum
             // 
-            this.txtStartingNum.Location = new System.Drawing.Point(6, 334);
+            this.txtStartingNum.Location = new System.Drawing.Point(6, 281);
             this.txtStartingNum.Name = "txtStartingNum";
             this.txtStartingNum.Size = new System.Drawing.Size(131, 20);
             this.txtStartingNum.TabIndex = 10;
@@ -113,7 +119,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 316);
+            this.label2.Location = new System.Drawing.Point(6, 263);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(84, 13);
             this.label2.TabIndex = 9;
@@ -122,7 +128,7 @@
             // rdBtFemale
             // 
             this.rdBtFemale.AutoSize = true;
-            this.rdBtFemale.Location = new System.Drawing.Point(60, 284);
+            this.rdBtFemale.Location = new System.Drawing.Point(60, 240);
             this.rdBtFemale.Name = "rdBtFemale";
             this.rdBtFemale.Size = new System.Drawing.Size(59, 17);
             this.rdBtFemale.TabIndex = 8;
@@ -133,7 +139,7 @@
             // rdBtMale
             // 
             this.rdBtMale.AutoSize = true;
-            this.rdBtMale.Location = new System.Drawing.Point(6, 284);
+            this.rdBtMale.Location = new System.Drawing.Point(6, 240);
             this.rdBtMale.Name = "rdBtMale";
             this.rdBtMale.Size = new System.Drawing.Size(48, 17);
             this.rdBtMale.TabIndex = 7;
@@ -144,7 +150,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 267);
+            this.label1.Location = new System.Drawing.Point(6, 223);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(45, 13);
             this.label1.TabIndex = 6;
@@ -153,7 +159,7 @@
             // lblAge
             // 
             this.lblAge.AutoSize = true;
-            this.lblAge.Location = new System.Drawing.Point(6, 206);
+            this.lblAge.Location = new System.Drawing.Point(6, 176);
             this.lblAge.Name = "lblAge";
             this.lblAge.Size = new System.Drawing.Size(29, 13);
             this.lblAge.TabIndex = 5;
@@ -161,7 +167,7 @@
             // 
             // nmrAge
             // 
-            this.nmrAge.Location = new System.Drawing.Point(6, 222);
+            this.nmrAge.Location = new System.Drawing.Point(6, 192);
             this.nmrAge.Minimum = new decimal(new int[] {
             10,
             0,
@@ -178,7 +184,7 @@
             // 
             // txtBxLastName
             // 
-            this.txtBxLastName.Location = new System.Drawing.Point(6, 116);
+            this.txtBxLastName.Location = new System.Drawing.Point(6, 86);
             this.txtBxLastName.Name = "txtBxLastName";
             this.txtBxLastName.Size = new System.Drawing.Size(131, 20);
             this.txtBxLastName.TabIndex = 3;
@@ -186,7 +192,7 @@
             // lblLastName
             // 
             this.lblLastName.AutoSize = true;
-            this.lblLastName.Location = new System.Drawing.Point(6, 100);
+            this.lblLastName.Location = new System.Drawing.Point(6, 70);
             this.lblLastName.Name = "lblLastName";
             this.lblLastName.Size = new System.Drawing.Size(56, 13);
             this.lblLastName.TabIndex = 2;
@@ -194,7 +200,7 @@
             // 
             // txtBxFirstName
             // 
-            this.txtBxFirstName.Location = new System.Drawing.Point(6, 72);
+            this.txtBxFirstName.Location = new System.Drawing.Point(6, 42);
             this.txtBxFirstName.Name = "txtBxFirstName";
             this.txtBxFirstName.Size = new System.Drawing.Size(131, 20);
             this.txtBxFirstName.TabIndex = 1;
@@ -202,7 +208,7 @@
             // lblFirstnName
             // 
             this.lblFirstnName.AutoSize = true;
-            this.lblFirstnName.Location = new System.Drawing.Point(6, 56);
+            this.lblFirstnName.Location = new System.Drawing.Point(6, 26);
             this.lblFirstnName.Name = "lblFirstnName";
             this.lblFirstnName.Size = new System.Drawing.Size(55, 13);
             this.lblFirstnName.TabIndex = 0;
@@ -249,6 +255,32 @@
             this.dataGridView1.Size = new System.Drawing.Size(614, 355);
             this.dataGridView1.TabIndex = 0;
             // 
+            // txtBxRemove
+            // 
+            this.txtBxRemove.Location = new System.Drawing.Point(6, 363);
+            this.txtBxRemove.Name = "txtBxRemove";
+            this.txtBxRemove.Size = new System.Drawing.Size(131, 20);
+            this.txtBxRemove.TabIndex = 14;
+            // 
+            // btnRemove
+            // 
+            this.btnRemove.Location = new System.Drawing.Point(5, 391);
+            this.btnRemove.Name = "btnRemove";
+            this.btnRemove.Size = new System.Drawing.Size(132, 23);
+            this.btnRemove.TabIndex = 15;
+            this.btnRemove.Text = "Remove!";
+            this.btnRemove.UseVisualStyleBackColor = true;
+            this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(5, 341);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(83, 13);
+            this.label4.TabIndex = 16;
+            this.label4.Text = "Remove runner:";
+            // 
             // RunnersForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -288,5 +320,8 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button btnSaveDb;
         private System.Windows.Forms.Button btnLoadDb;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button btnRemove;
+        private System.Windows.Forms.TextBox txtBxRemove;
     }
 }

@@ -36,7 +36,7 @@ namespace FinishLine.Core
                 while (csvReader.HasMoreRecords)
                 {
                     var dataRecord = csvReader.ReadDataRecord();
-                    Countries.Add(new Country(dataRecord[COUNTRY_CODE], dataRecord[ENGLISH_SHORT_NAME], dataRecord[SLOVAK_SHORT_NAME]));
+                    Countries.Add(new Country(dataRecord[COUNTRY_CODE], dataRecord[SLOVAK_SHORT_NAME], dataRecord[ENGLISH_SHORT_NAME]));
                     // since reader has a header record we can access data bz column names as well as by index
                     //Console.WriteLine("{ 0} is nicknamed {1}.", dataRecord[0], dataRecord["Nickname"]);
                 }

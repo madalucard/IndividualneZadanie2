@@ -16,16 +16,18 @@ namespace FinishLine.Core
         public string Country { get; set; }
         public bool IsMale { get; set; }
 
-                
+        /// <summary>
+        /// Checks for Id... if setted for -1  it will start looking for 1. free/not used id and sets it, break loop and continue by creatinf runner.
+        /// </summary>
         public void AddRunner()
         {
             // if runers id was setted -1  for will looks for lowest free/not used id and sets it and break for loop
             if (Id == -1)
             {
-               var asdf =  RunnerManger.GetRunnerDb();
+               var person =  RunnerManger.GetRunnerDb();
                 for (int i = 1; i < 1000; i++)
                 {
-                    if (!asdf.ContainsKey(i))
+                    if (!person.ContainsKey(i))
                     {
                         Id = i;
                         break;
@@ -35,7 +37,10 @@ namespace FinishLine.Core
 
             RunnerManger.RunnerAdd(Id, FirstName, LastName, Country, Age, IsMale);
         }
-
+        /// <summary>
+        /// Return DB
+        /// </summary>
+        /// <returns>DB</returns>
         public Dictionary<int,Runner> GetRunnersDb()
         {
             return RunnerManger.GetRunnerDb();

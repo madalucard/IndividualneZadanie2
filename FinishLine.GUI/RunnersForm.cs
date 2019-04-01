@@ -14,7 +14,9 @@ namespace FinishLine
     public partial class RunnersForm : Form
     {
         ViewModel _vm = new ViewModel();
-
+        /// <summary>
+        /// Constructor that will initialize form Window and load countries to ComboBox, and prepare columns
+        /// </summary>
         public RunnersForm()
         {
             InitializeComponent();
@@ -24,13 +26,14 @@ namespace FinishLine
                 Console.WriteLine(item);
                 cmbCountry.Items.Add(item.CountryNameEnglish);
             }
-            // sets columns
+            
             SetDataGridView();
-            // load actual local database
             //LoadDataGridView();
                 
         }
-
+        /// <summary>
+        /// Prepares columns for data loading
+        /// </summary>
         public void SetDataGridView()
         {
             dataGridView1.Columns.Add("Id", "Id");
@@ -40,7 +43,9 @@ namespace FinishLine
             dataGridView1.Columns.Add("Age", "Age");
             dataGridView1.Columns.Add("Sex", "Sex");
         }
-
+        /// <summary>
+        /// Loads data to DatagridView
+        /// </summary>
         public void LoadDataGridView()
         {
             dataGridView1.Rows.Clear();
@@ -50,7 +55,11 @@ namespace FinishLine
             }
 
         }
-
+        /// <summary>
+        /// Button for registration of runners, create runner and refresh DataGridView
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnRegister_Click(object sender, EventArgs e)
         {
             _vm.FirstName = txtBxFirstName.Text;
@@ -66,8 +75,6 @@ namespace FinishLine
             {
                 _vm.IsMale = false;
             }
-
-
             // TODO Control same IDs
             // if txtStartingNum have chosen id -> sets it for id
             // else set it to -1
@@ -80,35 +87,42 @@ namespace FinishLine
             {
                 _vm.Id = -1;
             }
-
+            // create runner
             _vm.AddRunner();
-
-            MessageBox.Show("Ready");
+            MessageBox.Show("Registred");
+            //refresh database
             dataGridView1.Rows.Clear();
             LoadDataGridView();
         }
-
-        //private void RunnersForm_Load(object sender, EventArgs e)
-        //{
-        //    // load data to list
-
-        //    foreach (var item in _vm.GetRunnersDb())
-        //    {
-        //        dataGridView1.Rows.Add(item.Key, item.Value.FirstName, item.Value.LastName, item.Value.Country, item.Value.Age, item.Value.IsMale);
-        //    }
-
-        //}
-
+        /// <summary>
+        /// Button for loading runners from DB
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnLoadDb_Click(object sender, EventArgs e)
         {
             LoadDataGridView();
         }
-
+        /// <summary>
+        /// Button for saving runners to DB
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnSaveDb_Click(object sender, EventArgs e)
         {
             FileManager.SaveRunners();
             MessageBox.Show("Saved");
             this.Close();
+        }
+        /// <summary>
+        /// Remove runner from db, saves it to txt and refresh DatagridView
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnRemove_Click(object sender, EventArgs e)
+        {
+            RunnerManger.RunnerDelete(int.Parse(txtBxRemove.Text));
+            LoadDataGridView();
         }
     }
 }
