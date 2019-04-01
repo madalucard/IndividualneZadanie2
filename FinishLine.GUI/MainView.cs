@@ -13,7 +13,7 @@ namespace FinishLine
 {
     public partial class MainView : Form
     {
-        ViewModel _vm;
+        
 
         public MainView()
         {   
@@ -25,6 +25,26 @@ namespace FinishLine
         {
             RunnersForm runner = new RunnersForm();
             runner.Show();
+        }
+
+        /// <summary>
+        /// It will allow to create new event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void createToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            grpBxRaceParameters.Visible = true;
+            dataGridView1.Visible = true;
+        }
+        /// <summary>
+        /// Exit button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void exitAppToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Environment.Exit(0);
         }
     }
 }

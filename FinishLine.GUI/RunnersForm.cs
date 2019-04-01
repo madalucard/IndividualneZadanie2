@@ -18,16 +18,44 @@ namespace FinishLine
         public RunnersForm()
         {
             InitializeComponent();
+            foreach (var item in FileManager.Countries)
+            {
+                Console.WriteLine(item);
+                cmbCountry.Items.Add(item.CountryNameEnglish);
+
+            }
+            SetDataGridView();
+            LoadDataGridView();
+                
+        }
+
+        public void SetDataGridView()
+        {
+            dataGridView1.Columns.Add("Id", "Id");
+            dataGridView1.Columns.Add("FirstName", "FirstName");
+            dataGridView1.Columns.Add("LastName", "LastName");
+            dataGridView1.Columns.Add("Country", "Country");
+            dataGridView1.Columns.Add("Age", "Age");
+            dataGridView1.Columns.Add("Sex", "Sex");
+        }
+
+        public void LoadDataGridView()
+        {
 
 
+            dataGridView1.Rows.Clear();
+            foreach (Runner person in _vm.GetRunnersDb().Values)
+            {
+                dataGridView1.Rows.Add(person.Id, person.FirstName, person.LastName, person.Country, person.Age, person.IsMaleToString);
+            }
 
         }
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
-            _vm.FirstName = txtBxFirstName.ToString();
-            _vm.LastName = txtBxLastName.ToString();
-            _vm.Country = comboBox1.Text;
+            _vm.FirstName = txtBxFirstName.Text;
+            _vm.LastName = txtBxLastName.Text;
+            _vm.Country = cmbCountry.Text;
             _vm.Age = int.Parse(nmrAge.Value.ToString());
 
             if (rdBtMale.Checked)
@@ -49,6 +77,10 @@ namespace FinishLine
             }
 
             _vm.AddRunner();
+
+            MessageBox.Show("Ready");
+            dataGridView1.Rows.Clear();
+            LoadDataGridView();
         }
 
         private void RunnersForm_Load(object sender, EventArgs e)

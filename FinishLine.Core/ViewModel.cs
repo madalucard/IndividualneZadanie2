@@ -16,6 +16,11 @@ namespace FinishLine.Core
         public string Country { get; set; }
         public bool IsMale { get; set; }
 
+        public ViewModel()
+        {
+            _rm.PopulateDB();
+        }
+
         public void AddRunner()
         {
             if (Id == -1)

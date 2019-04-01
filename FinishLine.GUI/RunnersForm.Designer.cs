@@ -30,9 +30,9 @@
         {
             this.grpBxRunnnerReg = new System.Windows.Forms.GroupBox();
             this.btnRegister = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cmbCountry = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtStartingNum = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.rdBtFemale = new System.Windows.Forms.RadioButton();
             this.rdBtMale = new System.Windows.Forms.RadioButton();
@@ -45,12 +45,9 @@
             this.lblFirstnName = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FirstName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Age = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Country = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Male = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnRegisterWithNumber = new System.Windows.Forms.Button();
+            this.btnLoadDb = new System.Windows.Forms.Button();
+            this.btnSaveDb = new System.Windows.Forms.Button();
             this.grpBxRunnnerReg.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nmrAge)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -59,10 +56,11 @@
             // 
             // grpBxRunnnerReg
             // 
+            this.grpBxRunnnerReg.Controls.Add(this.btnRegisterWithNumber);
             this.grpBxRunnnerReg.Controls.Add(this.btnRegister);
-            this.grpBxRunnnerReg.Controls.Add(this.comboBox1);
+            this.grpBxRunnnerReg.Controls.Add(this.cmbCountry);
             this.grpBxRunnnerReg.Controls.Add(this.label3);
-            this.grpBxRunnnerReg.Controls.Add(this.textBox1);
+            this.grpBxRunnnerReg.Controls.Add(this.txtStartingNum);
             this.grpBxRunnnerReg.Controls.Add(this.label2);
             this.grpBxRunnnerReg.Controls.Add(this.rdBtFemale);
             this.grpBxRunnnerReg.Controls.Add(this.rdBtMale);
@@ -82,21 +80,21 @@
             // 
             // btnRegister
             // 
-            this.btnRegister.Location = new System.Drawing.Point(5, 386);
+            this.btnRegister.Location = new System.Drawing.Point(5, 381);
             this.btnRegister.Name = "btnRegister";
             this.btnRegister.Size = new System.Drawing.Size(132, 23);
             this.btnRegister.TabIndex = 13;
-            this.btnRegister.Text = "Register";
+            this.btnRegister.Text = "Register with number";
             this.btnRegister.UseVisualStyleBackColor = true;
             this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
             // 
-            // comboBox1
+            // cmbCountry
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(5, 167);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(132, 21);
-            this.comboBox1.TabIndex = 12;
+            this.cmbCountry.FormattingEnabled = true;
+            this.cmbCountry.Location = new System.Drawing.Point(5, 167);
+            this.cmbCountry.Name = "cmbCountry";
+            this.cmbCountry.Size = new System.Drawing.Size(132, 21);
+            this.cmbCountry.TabIndex = 12;
             // 
             // label3
             // 
@@ -107,17 +105,17 @@
             this.label3.TabIndex = 11;
             this.label3.Text = "Country";
             // 
-            // textBox1
+            // txtStartingNum
             // 
-            this.textBox1.Location = new System.Drawing.Point(6, 364);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(131, 20);
-            this.textBox1.TabIndex = 10;
+            this.txtStartingNum.Location = new System.Drawing.Point(6, 355);
+            this.txtStartingNum.Name = "txtStartingNum";
+            this.txtStartingNum.Size = new System.Drawing.Size(131, 20);
+            this.txtStartingNum.TabIndex = 10;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 348);
+            this.label2.Location = new System.Drawing.Point(6, 339);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(84, 13);
             this.label2.TabIndex = 9;
@@ -214,6 +212,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnSaveDb);
+            this.groupBox1.Controls.Add(this.btnLoadDb);
             this.groupBox1.Controls.Add(this.dataGridView1);
             this.groupBox1.Location = new System.Drawing.Point(162, 13);
             this.groupBox1.Name = "groupBox1";
@@ -225,48 +225,38 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Id,
-            this.FirstName,
-            this.LastName,
-            this.Age,
-            this.Country,
-            this.Male});
-            this.dataGridView1.Location = new System.Drawing.Point(7, 19);
+            this.dataGridView1.Location = new System.Drawing.Point(6, 19);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.Size = new System.Drawing.Size(613, 400);
+            this.dataGridView1.Size = new System.Drawing.Size(614, 355);
             this.dataGridView1.TabIndex = 0;
             // 
-            // Id
+            // btnRegisterWithNumber
             // 
-            this.Id.HeaderText = "ID";
-            this.Id.Name = "Id";
+            this.btnRegisterWithNumber.Location = new System.Drawing.Point(5, 312);
+            this.btnRegisterWithNumber.Name = "btnRegisterWithNumber";
+            this.btnRegisterWithNumber.Size = new System.Drawing.Size(132, 23);
+            this.btnRegisterWithNumber.TabIndex = 14;
+            this.btnRegisterWithNumber.Text = "Register";
+            this.btnRegisterWithNumber.UseVisualStyleBackColor = true;
             // 
-            // FirstName
+            // btnLoadDb
             // 
-            this.FirstName.HeaderText = "FirstName";
-            this.FirstName.Name = "FirstName";
+            this.btnLoadDb.Location = new System.Drawing.Point(7, 380);
+            this.btnLoadDb.Name = "btnLoadDb";
+            this.btnLoadDb.Size = new System.Drawing.Size(304, 39);
+            this.btnLoadDb.TabIndex = 1;
+            this.btnLoadDb.Text = "Load Database";
+            this.btnLoadDb.UseVisualStyleBackColor = true;
             // 
-            // LastName
+            // btnSaveDb
             // 
-            this.LastName.HeaderText = "LastName";
-            this.LastName.Name = "LastName";
-            // 
-            // Age
-            // 
-            this.Age.HeaderText = "Age";
-            this.Age.Name = "Age";
-            // 
-            // Country
-            // 
-            this.Country.HeaderText = "Country";
-            this.Country.Name = "Country";
-            // 
-            // Male
-            // 
-            this.Male.HeaderText = "Male";
-            this.Male.Name = "Male";
+            this.btnSaveDb.Location = new System.Drawing.Point(317, 380);
+            this.btnSaveDb.Name = "btnSaveDb";
+            this.btnSaveDb.Size = new System.Drawing.Size(304, 39);
+            this.btnSaveDb.TabIndex = 2;
+            this.btnSaveDb.Text = "Save Database";
+            this.btnSaveDb.UseVisualStyleBackColor = true;
             // 
             // RunnersForm
             // 
@@ -290,7 +280,7 @@
         #endregion
 
         private System.Windows.Forms.GroupBox grpBxRunnnerReg;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtStartingNum;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.RadioButton rdBtFemale;
         private System.Windows.Forms.RadioButton rdBtMale;
@@ -302,15 +292,12 @@
         private System.Windows.Forms.TextBox txtBxFirstName;
         private System.Windows.Forms.Label lblFirstnName;
         private System.Windows.Forms.Button btnRegister;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmbCountry;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn FirstName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn LastName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Age;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Country;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Male;
+        private System.Windows.Forms.Button btnRegisterWithNumber;
+        private System.Windows.Forms.Button btnSaveDb;
+        private System.Windows.Forms.Button btnLoadDb;
     }
 }
