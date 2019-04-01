@@ -23,7 +23,7 @@ namespace FinishLine
 
         private void runnersToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            RunnersForm runner = new RunnersForm();
+            RunnersForm1 runner = new RunnersForm1();
             runner.Show();
         }
     }

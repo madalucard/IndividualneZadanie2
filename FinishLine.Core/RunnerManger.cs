@@ -17,7 +17,7 @@ namespace FinishLine.Core
             _dbRunners.Add(new Runner(75, "Martin", "Bielik", "Slovakia", 24, true));
             _dbRunners.Add(new Runner(2, "Andrej", "Balaz", "Slovakia", 30, true));
             _dbRunners.Add(new Runner(7, "James", "Bond", "Slovakia", 35, true));
-            _dbRunners.Add(new Runner(5, "John", "Doe", "Slovakia", 35, true));
+            _dbRunners.Add(new Runner(55, "John", "Doe", "Slovakia", 35, true));
             _dbRunners.Add(new Runner(666, "Bruce", "Wayne", "Slovakia", 35, true));
             _dbRunners.Add(new Runner(15, "Clark", "Kent", "Slovakia", 35, true));
             _dbRunners.Add(new Runner(1, "Ragnar", "Lothbrock", "Slovakia", 35, true));

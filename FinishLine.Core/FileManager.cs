@@ -10,7 +10,7 @@ namespace FinishLine.Core
 {
     public static class FileManager
     {
-        private static List<Country> countries = new List<Country>();
+        public static List<Country> Countries;
 
         private const string COUNTRY_CODE = "CountryCode";
         private const string ENGLISH_SHORT_NAME = "EnglishShortName";
@@ -21,8 +21,9 @@ namespace FinishLine.Core
         /// Open CVS file. Load data and create list of countries.
         /// </summary>
         /// <returns>List of Countries</returns>
-        public static List<Country> GetCountries()
+        public static void LoadCountries()
         {
+            Countries = new List<Country>();
             using (var streamReader = new StreamReader(@"C:\Users\transformer3\source\repos\W3D5_IndividualProject2\Data\countries.csv"))
             using (var csvReader = new CsvReader(streamReader))
             {
@@ -32,13 +33,14 @@ namespace FinishLine.Core
                 while (csvReader.HasMoreRecords)
                 {
                     var dataRecord = csvReader.ReadDataRecord();
-                    countries.Add(new Country(dataRecord[0], dataRecord[1], dataRecord[2]));
+                    Countries.Add(new Country(dataRecord[0], dataRecord[1], dataRecord[2]));
                     // since reader has a header record we can access data bz column names as well as by index
                     //Console.WriteLine("{0} is nicknamed {1}.", dataRecord[0], dataRecord["Nickname"]);
                 }
             }
-        return countries;
+        
         }
         
+
     }
 }

@@ -15,7 +15,7 @@ namespace FinishLine
         [STAThread]
         static void Main()
         {
-            FileManager.GetCountries();
+            FileManager.LoadCountries();
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
