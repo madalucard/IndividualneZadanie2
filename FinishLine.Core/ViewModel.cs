@@ -8,7 +8,7 @@ namespace FinishLine.Core
 {
     public class ViewModel
     {
-        RunnerManger _rm = new RunnerManger();
+
         public int Id { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
@@ -18,11 +18,24 @@ namespace FinishLine.Core
 
         public void AddRunner()
         {
-            _rm.RunnerAdd(Id, FirstName, LastName, Country, Age, IsMale);
+            if (Id == -1)
+            {
+               var asdf =  RunnerManger.GetRunnerDb();
+                for (int i = 1; i < 1000; i++)
+                {
+                    if (!asdf.ContainsKey(i))
+                    {
+                        Id = i;
+                        break;
+                    }
+                }
+            }
+
+            RunnerManger.RunnerAdd(Id, FirstName, LastName, Country, Age, IsMale);
         }
-        public List<Runner> GetRunnersDb()
+        public Dictionary<int,Runner> GetRunnersDb()
         {
-            return _rm.GetRunnerDb();
+            return RunnerManger.GetRunnerDb();
         }
 
 

@@ -6,55 +6,49 @@ using System.Threading.Tasks;
 
 namespace FinishLine.Core
 {
-    public class RunnerManger
+    public static class RunnerManger
     {
-        List<Runner> _dbRunners = new List<Runner>();
+        public static Dictionary<int, Runner> _dbRunners = new Dictionary<int, Runner>();
 
-        public void PopulateDB()
+        public static void PopulateDB()
         {
-            _dbRunners.Add(new Runner(28, "Martin", "Lapihuska", "Slovakia", 25, true));
-            _dbRunners.Add(new Runner(206, "Jakub", "Lapihuska", "Slovakia", 22, true));
-            _dbRunners.Add(new Runner(75, "Martin", "Bielik", "Slovakia", 24, true));
-            _dbRunners.Add(new Runner(2, "Andrej", "Balaz", "Slovakia", 30, true));
-            _dbRunners.Add(new Runner(7, "James", "Bond", "Slovakia", 35, true));
-            _dbRunners.Add(new Runner(55, "John", "Doe", "Slovakia", 35, true));
-            _dbRunners.Add(new Runner(666, "Bruce", "Wayne", "Slovakia", 35, true));
-            _dbRunners.Add(new Runner(15, "Clark", "Kent", "Slovakia", 35, true));
-            _dbRunners.Add(new Runner(1, "Ragnar", "Lothbrock", "Slovakia", 35, true));
+            //_dbRunners.Add(new Runner(28, "Martin", "Lapihuska", "Slovakia", 25, true));
+            //_dbRunners.Add(new Runner(206, "Jakub", "Lapihuska", "Slovakia", 22, true));
+            //_dbRunners.Add(new Runner(75, "Martin", "Bielik", "Slovakia", 24, true));
+            //_dbRunners.Add(new Runner(2, "Andrej", "Balaz", "Slovakia", 30, true));
+            //_dbRunners.Add(new Runner(7, "James", "Bond", "Slovakia", 35, true));
+            //_dbRunners.Add(new Runner(55, "John", "Doe", "Slovakia", 35, true));
+            //_dbRunners.Add(new Runner(666, "Bruce", "Wayne", "Slovakia", 35, true));
+            //_dbRunners.Add(new Runner(15, "Clark", "Kent", "Slovakia", 35, true));
+            //_dbRunners.Add(new Runner(1, "Ragnar", "Lothbrock", "Slovakia", 35, true));
         }
 
-        public List<Runner> GetRunnerDb()
+        public static Dictionary<int, Runner> GetRunnerDb()
         {
+            // test purposes
+            _dbRunners.Add(75, new Runner(75, "Martin", "Bielik", "Slovakia", 24, true));
+
+            // TODO if _dbRunners is empty -> load from file
             return _dbRunners;
-            
         }
 
-        public void RunnerAdd(int id, string firstName, string lastName, string country, int age, bool isMale)
+        public static void RunnerAdd(int id, string firstName, string lastName, string country, int age, bool isMale)
         {
-            _dbRunners.Add(new Runner(id, firstName, lastName, country, age, isMale));
-        }
-        public void RunnerDelete(int id)
-        {
-            foreach (var r in _dbRunners)
-            {
-                if (r.Id == id)
-                {
-                    _dbRunners.RemoveAt(id);
-                }
-            }
+            // TODO save new runner to text file with method
+            _dbRunners.Add(id ,new Runner(id, firstName, lastName, country, age, isMale));
         }
 
-        public bool IsIdEmpty(int id)
+        /// <summary>
+        ///  Delete Runner from DB by id
+        /// </summary>
+        /// <param name="id"></param>
+        public static void RunnerDelete(int id)
         {
-            foreach (var r in _dbRunners)
-            {
-                if (r.Id == id)
-                {
-                    return false;
-                }
-
-            }
-            return true;
+            // TODO remove specific runner from file 
+            // -> load all runners
+            // -> remove everything from txt
+            // -> save all runners from variable to txt
+            _dbRunners.Remove(id);
         }
     }
 }

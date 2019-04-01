@@ -10,7 +10,7 @@ namespace FinishLine.Core
 {
     public static class FileManager
     {
-        public static List<Country> Countries;
+        public static List<Country> Countries= new List<Country>();
 
         private const string COUNTRY_CODE = "CountryCode";
         private const string ENGLISH_SHORT_NAME = "EnglishShortName";
@@ -23,7 +23,10 @@ namespace FinishLine.Core
         /// <returns>List of Countries</returns>
         public static void LoadCountries()
         {
-            using (var streamReader = new StreamReader(@"C:\Users\transformer3\source\repos\W3D5_IndividualProject2\Data\countries.csv"))
+            // loading link from home computer
+            using (var streamReader = new StreamReader(@"C: \Users\madal\source\repos\IndividualneZadanie2\Data\countries.csv"))
+            // Loading link from work computer
+            //using (var streamReader = new StreamReader(@"C:\Users\transformer3\source\repos\W3D5_IndividualProject2\Data\countries.csv"))
             using (var csvReader = new CsvReader(streamReader))
             {
                 // CSV had reader record so we read that first
@@ -39,7 +42,6 @@ namespace FinishLine.Core
             }
         
         }
-        
 
     }
 }

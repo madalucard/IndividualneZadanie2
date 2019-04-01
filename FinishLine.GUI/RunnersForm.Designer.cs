@@ -109,7 +109,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(6, 337);
+            this.textBox1.Location = new System.Drawing.Point(6, 364);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(131, 20);
             this.textBox1.TabIndex = 10;
@@ -117,7 +117,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 321);
+            this.label2.Location = new System.Drawing.Point(6, 348);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(84, 13);
             this.label2.TabIndex = 9;
@@ -277,6 +277,7 @@
             this.Controls.Add(this.grpBxRunnnerReg);
             this.Name = "RunnersForm";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.RunnersForm_Load);
             this.grpBxRunnnerReg.ResumeLayout(false);
             this.grpBxRunnnerReg.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nmrAge)).EndInit();
