@@ -16,7 +16,7 @@ namespace FinishLine.Core
         private const string ENGLISH_SHORT_NAME = "EnglishShortName";
         private const string SLOVAK_SHORT_NAME = "SlovakShortName";
         private const char VALUE_SEPARATOR = ';';
-        private static string _filePath = "dbRunners.txt";
+        private static string _filePath = @"C: \Users\madal\source\repos\IndividualneZadanie2\Data\dbRunners.txt";
 
         /// <summary>
         /// Open CVS file. Load data and create list of countries.
@@ -52,9 +52,10 @@ namespace FinishLine.Core
             {
                 foreach (var entry in RunnerManger._dbRunners)
                 {
-                    file.WriteLine($"[{entry.Key.ToString()};{entry.Value.FirstName.ToString()};{entry.Value.LastName.ToString()};{entry.Value.Country.ToString()}; {entry.Value.Age.ToString()}; {entry.Value.IsMale}]");
+                    file.WriteLine($"{entry.Key.ToString()};{entry.Value.FirstName.ToString()};{entry.Value.LastName.ToString()};{entry.Value.Country.ToString()};{entry.Value.Age.ToString()};{entry.Value.IsMale}");
                 }
             }
+            
         }
 
         /// <summary>
@@ -62,7 +63,10 @@ namespace FinishLine.Core
         /// </summary>
         public static void LoadRunners()
         {
-            foreach (var lines in File.ReadAllLines(_filePath))
+            using (File.Open(_filePath, FileMode.OpenOrCreate, FileAccess.ReadWrite)) {}
+            List<string> tempList = new List<string>();
+            tempList = File.ReadAllLines(_filePath).ToList();
+            foreach (var lines in tempList)
             {
                 string[] temp = lines.Split(VALUE_SEPARATOR);
                 bool tempBool;
@@ -77,7 +81,6 @@ namespace FinishLine.Core
 
                 RunnerManger._dbRunners.Add(int.Parse(temp[0]), new Runner(int.Parse(temp[0]), temp[1], temp[2], temp[3], int.Parse(temp[4]), tempBool));
             }
-            
 
         }
     }

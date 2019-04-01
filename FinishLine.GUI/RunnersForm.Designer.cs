@@ -44,10 +44,9 @@
             this.txtBxFirstName = new System.Windows.Forms.TextBox();
             this.lblFirstnName = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.btnRegisterWithNumber = new System.Windows.Forms.Button();
-            this.btnLoadDb = new System.Windows.Forms.Button();
             this.btnSaveDb = new System.Windows.Forms.Button();
+            this.btnLoadDb = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.grpBxRunnnerReg.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nmrAge)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -56,7 +55,6 @@
             // 
             // grpBxRunnnerReg
             // 
-            this.grpBxRunnnerReg.Controls.Add(this.btnRegisterWithNumber);
             this.grpBxRunnnerReg.Controls.Add(this.btnRegister);
             this.grpBxRunnnerReg.Controls.Add(this.cmbCountry);
             this.grpBxRunnnerReg.Controls.Add(this.label3);
@@ -84,7 +82,7 @@
             this.btnRegister.Name = "btnRegister";
             this.btnRegister.Size = new System.Drawing.Size(132, 23);
             this.btnRegister.TabIndex = 13;
-            this.btnRegister.Text = "Register with number";
+            this.btnRegister.Text = "Register!";
             this.btnRegister.UseVisualStyleBackColor = true;
             this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
             // 
@@ -107,7 +105,7 @@
             // 
             // txtStartingNum
             // 
-            this.txtStartingNum.Location = new System.Drawing.Point(6, 355);
+            this.txtStartingNum.Location = new System.Drawing.Point(6, 334);
             this.txtStartingNum.Name = "txtStartingNum";
             this.txtStartingNum.Size = new System.Drawing.Size(131, 20);
             this.txtStartingNum.TabIndex = 10;
@@ -115,7 +113,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 339);
+            this.label2.Location = new System.Drawing.Point(6, 316);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(84, 13);
             this.label2.TabIndex = 9;
@@ -222,23 +220,15 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Registred Runners";
             // 
-            // dataGridView1
+            // btnSaveDb
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(6, 19);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.Size = new System.Drawing.Size(614, 355);
-            this.dataGridView1.TabIndex = 0;
-            // 
-            // btnRegisterWithNumber
-            // 
-            this.btnRegisterWithNumber.Location = new System.Drawing.Point(5, 312);
-            this.btnRegisterWithNumber.Name = "btnRegisterWithNumber";
-            this.btnRegisterWithNumber.Size = new System.Drawing.Size(132, 23);
-            this.btnRegisterWithNumber.TabIndex = 14;
-            this.btnRegisterWithNumber.Text = "Register";
-            this.btnRegisterWithNumber.UseVisualStyleBackColor = true;
+            this.btnSaveDb.Location = new System.Drawing.Point(317, 380);
+            this.btnSaveDb.Name = "btnSaveDb";
+            this.btnSaveDb.Size = new System.Drawing.Size(304, 39);
+            this.btnSaveDb.TabIndex = 2;
+            this.btnSaveDb.Text = "Save Database";
+            this.btnSaveDb.UseVisualStyleBackColor = true;
+            this.btnSaveDb.Click += new System.EventHandler(this.btnSaveDb_Click);
             // 
             // btnLoadDb
             // 
@@ -248,15 +238,16 @@
             this.btnLoadDb.TabIndex = 1;
             this.btnLoadDb.Text = "Load Database";
             this.btnLoadDb.UseVisualStyleBackColor = true;
+            this.btnLoadDb.Click += new System.EventHandler(this.btnLoadDb_Click);
             // 
-            // btnSaveDb
+            // dataGridView1
             // 
-            this.btnSaveDb.Location = new System.Drawing.Point(317, 380);
-            this.btnSaveDb.Name = "btnSaveDb";
-            this.btnSaveDb.Size = new System.Drawing.Size(304, 39);
-            this.btnSaveDb.TabIndex = 2;
-            this.btnSaveDb.Text = "Save Database";
-            this.btnSaveDb.UseVisualStyleBackColor = true;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(6, 19);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersVisible = false;
+            this.dataGridView1.Size = new System.Drawing.Size(614, 355);
+            this.dataGridView1.TabIndex = 0;
             // 
             // RunnersForm
             // 
@@ -267,7 +258,6 @@
             this.Controls.Add(this.grpBxRunnnerReg);
             this.Name = "RunnersForm";
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.RunnersForm_Load);
             this.grpBxRunnnerReg.ResumeLayout(false);
             this.grpBxRunnnerReg.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nmrAge)).EndInit();
@@ -296,7 +286,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button btnRegisterWithNumber;
         private System.Windows.Forms.Button btnSaveDb;
         private System.Windows.Forms.Button btnLoadDb;
     }

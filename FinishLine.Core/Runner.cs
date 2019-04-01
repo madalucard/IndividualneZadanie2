@@ -33,6 +33,7 @@ namespace FinishLine.Core
         public string LastName { get; }
         public string Country { get; }
         public int Age { get; }
+        public float Speed { get; }
         public bool IsMale { get; }
         public string IsMaleToString
         {
@@ -59,8 +60,6 @@ namespace FinishLine.Core
             Age = age;
             IsMale = isMale;
         }
-
-
 
     }
 }

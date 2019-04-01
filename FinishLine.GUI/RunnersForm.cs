@@ -18,14 +18,16 @@ namespace FinishLine
         public RunnersForm()
         {
             InitializeComponent();
+            // set combobox with countries
             foreach (var item in FileManager.Countries)
             {
                 Console.WriteLine(item);
                 cmbCountry.Items.Add(item.CountryNameEnglish);
-
             }
+            // sets columns
             SetDataGridView();
-            LoadDataGridView();
+            // load actual local database
+            //LoadDataGridView();
                 
         }
 
@@ -41,8 +43,6 @@ namespace FinishLine
 
         public void LoadDataGridView()
         {
-
-
             dataGridView1.Rows.Clear();
             foreach (Runner person in _vm.GetRunnersDb().Values)
             {
@@ -57,7 +57,7 @@ namespace FinishLine
             _vm.LastName = txtBxLastName.Text;
             _vm.Country = cmbCountry.Text;
             _vm.Age = int.Parse(nmrAge.Value.ToString());
-
+            // sets male or female
             if (rdBtMale.Checked)
             {
                 _vm.IsMale = true;
@@ -67,8 +67,13 @@ namespace FinishLine
                 _vm.IsMale = false;
             }
 
+
+            // TODO Control same IDs
+            // if txtStartingNum have chosen id -> sets it for id
+            // else set it to -1
             if (!string.IsNullOrEmpty(txtStartingNum.Text))
             {
+                
                 _vm.Id = int.Parse(txtStartingNum.Text);
             }
             else
@@ -83,15 +88,27 @@ namespace FinishLine
             LoadDataGridView();
         }
 
-        private void RunnersForm_Load(object sender, EventArgs e)
+        //private void RunnersForm_Load(object sender, EventArgs e)
+        //{
+        //    // load data to list
+
+        //    foreach (var item in _vm.GetRunnersDb())
+        //    {
+        //        dataGridView1.Rows.Add(item.Key, item.Value.FirstName, item.Value.LastName, item.Value.Country, item.Value.Age, item.Value.IsMale);
+        //    }
+
+        //}
+
+        private void btnLoadDb_Click(object sender, EventArgs e)
         {
-            // load data to list
+            LoadDataGridView();
+        }
 
-            foreach (var item in _vm.GetRunnersDb())
-            {
-                dataGridView1.Rows.Add(item.Key, item.Value.FirstName, item.Value.LastName, item.Value.Country, item.Value.Age, item.Value.IsMale);
-            }
-
+        private void btnSaveDb_Click(object sender, EventArgs e)
+        {
+            FileManager.SaveRunners();
+            MessageBox.Show("Saved");
+            this.Close();
         }
     }
 }

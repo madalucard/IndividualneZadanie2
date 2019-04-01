@@ -50,11 +50,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="RaceManager.cs" />
     <Compile Include="RunnerManger.cs" />
     <Compile Include="Country.cs" />
     <Compile Include="FileManager.cs" />
     <Compile Include="Race.cs" />
     <Compile Include="Runner.cs" />
+    <Compile Include="Statistic.cs" />
     <Compile Include="ViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

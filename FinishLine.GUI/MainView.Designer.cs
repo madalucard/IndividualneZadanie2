@@ -36,21 +36,28 @@
             this.exitAppToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.runnersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.grpBxRaceParameters = new System.Windows.Forms.GroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.lblDistance = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.lblLaps = new System.Windows.Forms.Label();
+            this.lblStartTime = new System.Windows.Forms.Label();
+            this.btnStartRace = new System.Windows.Forms.Button();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.lblWinners = new System.Windows.Forms.Label();
-            this.btnStartRace = new System.Windows.Forms.Button();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.lblLaps = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.lblDistance = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.lblStartTime = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.grpBxRaceControl = new System.Windows.Forms.GroupBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.button2 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.grpBxRaceParameters.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            this.grpBxRaceControl.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -78,26 +85,26 @@
             // createToolStripMenuItem
             // 
             this.createToolStripMenuItem.Name = "createToolStripMenuItem";
-            this.createToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.createToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.createToolStripMenuItem.Text = "New Event";
             this.createToolStripMenuItem.Click += new System.EventHandler(this.createToolStripMenuItem_Click);
             // 
             // saveToolStripMenuItem
             // 
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.saveToolStripMenuItem.Text = "Save race";
             // 
             // loadToolStripMenuItem
             // 
             this.loadToolStripMenuItem.Name = "loadToolStripMenuItem";
-            this.loadToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.loadToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.loadToolStripMenuItem.Text = "Load race";
             // 
             // exitAppToolStripMenuItem
             // 
             this.exitAppToolStripMenuItem.Name = "exitAppToolStripMenuItem";
-            this.exitAppToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.exitAppToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.exitAppToolStripMenuItem.Text = "Exit app";
             this.exitAppToolStripMenuItem.Click += new System.EventHandler(this.exitAppToolStripMenuItem_Click);
             // 
@@ -126,37 +133,25 @@
             this.grpBxRaceParameters.Text = "Race parameters:";
             this.grpBxRaceParameters.Visible = false;
             // 
-            // textBox1
+            // lblStartTime
             // 
-            this.textBox1.Location = new System.Drawing.Point(132, 27);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 1;
+            this.lblStartTime.AutoSize = true;
+            this.lblStartTime.Location = new System.Drawing.Point(6, 169);
+            this.lblStartTime.Name = "lblStartTime";
+            this.lblStartTime.Size = new System.Drawing.Size(72, 13);
+            this.lblStartTime.TabIndex = 7;
+            this.lblStartTime.Text = "Starting Time:";
             // 
-            // lblDistance
+            // btnStartRace
             // 
-            this.lblDistance.AutoSize = true;
-            this.lblDistance.Location = new System.Drawing.Point(6, 30);
-            this.lblDistance.Name = "lblDistance";
-            this.lblDistance.Size = new System.Drawing.Size(73, 13);
-            this.lblDistance.TabIndex = 0;
-            this.lblDistance.Text = "Lap Distance:";
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(132, 57);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 3;
-            // 
-            // lblLaps
-            // 
-            this.lblLaps.AutoSize = true;
-            this.lblLaps.Location = new System.Drawing.Point(6, 60);
-            this.lblLaps.Name = "lblLaps";
-            this.lblLaps.Size = new System.Drawing.Size(85, 13);
-            this.lblLaps.TabIndex = 2;
-            this.lblLaps.Text = "Number of Laps:";
+            this.btnStartRace.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnStartRace.Location = new System.Drawing.Point(132, 125);
+            this.btnStartRace.Name = "btnStartRace";
+            this.btnStartRace.Size = new System.Drawing.Size(100, 23);
+            this.btnStartRace.TabIndex = 6;
+            this.btnStartRace.Text = "Start race";
+            this.btnStartRace.UseVisualStyleBackColor = true;
+            this.btnStartRace.Click += new System.EventHandler(this.btnStartRace_Click);
             // 
             // textBox3
             // 
@@ -174,15 +169,37 @@
             this.lblWinners.TabIndex = 4;
             this.lblWinners.Text = "Number of Winners:";
             // 
-            // btnStartRace
+            // textBox2
             // 
-            this.btnStartRace.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnStartRace.Location = new System.Drawing.Point(132, 125);
-            this.btnStartRace.Name = "btnStartRace";
-            this.btnStartRace.Size = new System.Drawing.Size(100, 23);
-            this.btnStartRace.TabIndex = 6;
-            this.btnStartRace.Text = "Start race";
-            this.btnStartRace.UseVisualStyleBackColor = true;
+            this.textBox2.Location = new System.Drawing.Point(132, 57);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(100, 20);
+            this.textBox2.TabIndex = 3;
+            // 
+            // lblLaps
+            // 
+            this.lblLaps.AutoSize = true;
+            this.lblLaps.Location = new System.Drawing.Point(6, 60);
+            this.lblLaps.Name = "lblLaps";
+            this.lblLaps.Size = new System.Drawing.Size(85, 13);
+            this.lblLaps.TabIndex = 2;
+            this.lblLaps.Text = "Number of Laps:";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(132, 27);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.TabIndex = 1;
+            // 
+            // lblDistance
+            // 
+            this.lblDistance.AutoSize = true;
+            this.lblDistance.Location = new System.Drawing.Point(6, 30);
+            this.lblDistance.Name = "lblDistance";
+            this.lblDistance.Size = new System.Drawing.Size(73, 13);
+            this.lblDistance.TabIndex = 0;
+            this.lblDistance.Text = "Lap Distance:";
             // 
             // dataGridView1
             // 
@@ -191,6 +208,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(714, 300);
             this.dataGridView1.TabIndex = 3;
+            this.dataGridView1.Visible = false;
             // 
             // dataGridView2
             // 
@@ -199,31 +217,81 @@
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.Size = new System.Drawing.Size(714, 300);
             this.dataGridView2.TabIndex = 4;
+            this.dataGridView2.Visible = false;
             // 
-            // lblStartTime
+            // grpBxRaceControl
             // 
-            this.lblStartTime.AutoSize = true;
-            this.lblStartTime.Location = new System.Drawing.Point(6, 169);
-            this.lblStartTime.Name = "lblStartTime";
-            this.lblStartTime.Size = new System.Drawing.Size(72, 13);
-            this.lblStartTime.TabIndex = 7;
-            this.lblStartTime.Text = "Starting Time:";
+            this.grpBxRaceControl.Controls.Add(this.label2);
+            this.grpBxRaceControl.Controls.Add(this.textBox5);
+            this.grpBxRaceControl.Controls.Add(this.button2);
+            this.grpBxRaceControl.Controls.Add(this.label1);
+            this.grpBxRaceControl.Controls.Add(this.textBox4);
+            this.grpBxRaceControl.Controls.Add(this.button1);
+            this.grpBxRaceControl.Location = new System.Drawing.Point(12, 231);
+            this.grpBxRaceControl.Name = "grpBxRaceControl";
+            this.grpBxRaceControl.Size = new System.Drawing.Size(240, 418);
+            this.grpBxRaceControl.TabIndex = 8;
+            this.grpBxRaceControl.TabStop = false;
+            this.grpBxRaceControl.Text = "Race Control";
+            this.grpBxRaceControl.Visible = false;
             // 
-            // groupBox1
+            // textBox4
             // 
-            this.groupBox1.Location = new System.Drawing.Point(12, 231);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(240, 418);
-            this.groupBox1.TabIndex = 8;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "groupBox1";
+            this.textBox4.Location = new System.Drawing.Point(133, 78);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(100, 20);
+            this.textBox4.TabIndex = 2;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(133, 104);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(100, 23);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "Split time";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(12, 81);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(80, 13);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Runner number";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(10, 330);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(55, 13);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "Disqalified";
+            // 
+            // textBox5
+            // 
+            this.textBox5.Location = new System.Drawing.Point(131, 327);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(100, 20);
+            this.textBox5.TabIndex = 5;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(131, 353);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(100, 23);
+            this.button2.TabIndex = 4;
+            this.button2.Text = "Disqualified";
+            this.button2.UseVisualStyleBackColor = true;
             // 
             // MainView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(984, 661);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.grpBxRaceControl);
             this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.grpBxRaceParameters);
@@ -237,6 +305,8 @@
             this.grpBxRaceParameters.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            this.grpBxRaceControl.ResumeLayout(false);
+            this.grpBxRaceControl.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -262,7 +332,13 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.Label lblStartTime;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox grpBxRaceControl;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label label1;
     }
 }
 

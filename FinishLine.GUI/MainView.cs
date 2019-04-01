@@ -13,7 +13,7 @@ namespace FinishLine
 {
     public partial class MainView : Form
     {
-        
+        RaceManager rm = new RaceManager();
 
         public MainView()
         {   
@@ -36,6 +36,9 @@ namespace FinishLine
         {
             grpBxRaceParameters.Visible = true;
             dataGridView1.Visible = true;
+            dataGridView2.Visible = true;
+            grpBxRaceControl.Visible = true;
+
         }
         /// <summary>
         /// Exit button
@@ -45,6 +48,17 @@ namespace FinishLine
         private void exitAppToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Environment.Exit(0);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            var elapsedTime = rm.DoLap(int.Parse(textBox4.Text));
+            // TODO write elapsed time and id and lapCount
+        }
+
+        private void btnStartRace_Click(object sender, EventArgs e)
+        {
+            rm.StartRace();
         }
     }
 }

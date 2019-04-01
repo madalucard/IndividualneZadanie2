@@ -1,0 +1,11 @@
+28;Martin;Lapihuska;Slovakia;25;False
+206;Jakub;Lapihuska;Slovakia;22;False
+75;Martin;Bielik;Slovakia;24;False
+2;Andrej;Balaz;Slovakia;30;False
+7;James;Bond;Slovakia;35;False
+55;John;Doe;Slovakia;35;False
+666;Bruce;Wayne;Slovakia;35;False
+15;Clark;Kent;Slovakia;35;False
+1;Ragnar;Lothbrock;Slovakia;35;False
+18;Diana;The amazon princes;Antarktída;15;False
+9;Balin;Lapihuska;Curaçao;13;False

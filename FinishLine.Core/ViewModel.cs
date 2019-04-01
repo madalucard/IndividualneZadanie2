@@ -16,12 +16,10 @@ namespace FinishLine.Core
         public string Country { get; set; }
         public bool IsMale { get; set; }
 
-        public ViewModel()
-        {
-        }
-
+                
         public void AddRunner()
         {
+            // if runers id was setted -1  for will looks for lowest free/not used id and sets it and break for loop
             if (Id == -1)
             {
                var asdf =  RunnerManger.GetRunnerDb();
@@ -37,6 +35,7 @@ namespace FinishLine.Core
 
             RunnerManger.RunnerAdd(Id, FirstName, LastName, Country, Age, IsMale);
         }
+
         public Dictionary<int,Runner> GetRunnersDb()
         {
             return RunnerManger.GetRunnerDb();

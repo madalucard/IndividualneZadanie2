@@ -12,24 +12,16 @@ namespace FinishLine.Core
 
         public static void PopulateDB()
         {
-            //_dbRunners.Add(new Runner(28, "Martin", "Lapihuska", "Slovakia", 25, true));
-            //_dbRunners.Add(new Runner(206, "Jakub", "Lapihuska", "Slovakia", 22, true));
-            //_dbRunners.Add(new Runner(75, "Martin", "Bielik", "Slovakia", 24, true));
-            //_dbRunners.Add(new Runner(2, "Andrej", "Balaz", "Slovakia", 30, true));
-            //_dbRunners.Add(new Runner(7, "James", "Bond", "Slovakia", 35, true));
-            //_dbRunners.Add(new Runner(55, "John", "Doe", "Slovakia", 35, true));
-            //_dbRunners.Add(new Runner(666, "Bruce", "Wayne", "Slovakia", 35, true));
-            //_dbRunners.Add(new Runner(15, "Clark", "Kent", "Slovakia", 35, true));
-            //_dbRunners.Add(new Runner(1, "Ragnar", "Lothbrock", "Slovakia", 35, true));
-            _dbRunners.Add(28,new Runner(28, "Martin", "Lapihuska", "Slovakia", 25, true));
-            _dbRunners.Add(206,new Runner(206, "Jakub", "Lapihuska", "Slovakia", 22, true));
-            _dbRunners.Add(75,new Runner(75, "Martin", "Bielik", "Slovakia", 24, true));
-            _dbRunners.Add(2,new Runner(2, "Andrej", "Balaz", "Slovakia", 30, true));
-            _dbRunners.Add(7,new Runner(7, "James", "Bond", "Slovakia", 35, true));
-            _dbRunners.Add(55,new Runner(55, "John", "Doe", "Slovakia", 35, true));
-            _dbRunners.Add(666,new Runner(666, "Bruce", "Wayne", "Slovakia", 35, true));
-            _dbRunners.Add(15,new Runner(15, "Clark", "Kent", "Slovakia", 35, true));
-            _dbRunners.Add(1,new Runner(1, "Ragnar", "Lothbrock", "Slovakia", 35, true));
+
+            _dbRunners.Add(28, new Runner(28, "Martin", "Lapihuska", "Slovakia", 25, true));
+            _dbRunners.Add(206, new Runner(206, "Jakub", "Lapihuska", "Slovakia", 22, true));
+            _dbRunners.Add(75, new Runner(75, "Martin", "Bielik", "Slovakia", 24, true));
+            _dbRunners.Add(2, new Runner(2, "Andrej", "Balaz", "Slovakia", 30, true));
+            _dbRunners.Add(7, new Runner(7, "James", "Bond", "Slovakia", 35, true));
+            _dbRunners.Add(55, new Runner(55, "John", "Doe", "Slovakia", 35, true));
+            _dbRunners.Add(666, new Runner(666, "Bruce", "Wayne", "Slovakia", 35, true));
+            _dbRunners.Add(15, new Runner(15, "Clark", "Kent", "Slovakia", 35, true));
+            _dbRunners.Add(1, new Runner(1, "Ragnar", "Lothbrock", "Slovakia", 35, true));
         }
         /// <summary>
         /// It will return actual Database
@@ -37,11 +29,18 @@ namespace FinishLine.Core
         /// <returns>Databese of runners</returns>
         public static Dictionary<int, Runner> GetRunnerDb()
         {
-            // test purposes
-            _dbRunners.Add(75, new Runner(75, "Martin", "Bielik", "Slovakia", 24, true));
 
+            if (_dbRunners.Count != 0)
+            {
+                return _dbRunners;
+            }
+            else
+            {
+                FileManager.LoadRunners();
+                return _dbRunners;
+            }
             // TODO if _dbRunners is empty -> load from file
-            return _dbRunners;
+
         }
         /// <summary>
         /// Create runner into dictionary with choosen ID
