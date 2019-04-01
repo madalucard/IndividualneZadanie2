@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FinishLine.Core
 {
-    class RunnerManger
+    public class RunnerManger
     {
         List<Runner> _dbRunners = new List<Runner>();
 
@@ -23,6 +23,26 @@ namespace FinishLine.Core
             _dbRunners.Add(new Runner(1, "Ragnar", "Lothbrock", "Slovakia", 35, true));
         }
 
+        public List<Runner> GetRunnerDb()
+        {
+            return _dbRunners;
+            
+        }
+
+        public void RunnerAdd(int id, string firstName, string lastName, string country, int age, bool isMale)
+        {
+            _dbRunners.Add(new Runner(id, firstName, lastName, country, age, isMale));
+        }
+        public void RunnerDelete(int id)
+        {
+            foreach (var r in _dbRunners)
+            {
+                if (r.Id == id)
+                {
+                    _dbRunners.RemoveAt(id);
+                }
+            }
+        }
 
         public bool IsIdEmpty(int id)
         {
@@ -32,7 +52,7 @@ namespace FinishLine.Core
                 {
                     return false;
                 }
-                
+
             }
             return true;
         }

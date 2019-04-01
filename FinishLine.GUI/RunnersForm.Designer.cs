@@ -1,6 +1,6 @@
 ﻿namespace FinishLine
 {
-    partial class RunnersForm1
+    partial class RunnersForm
     {
         /// <summary>
         /// Required designer variable.
@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.grpBxRunnnerReg = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.cmbBxCountry = new System.Windows.Forms.ComboBox();
+            this.btnRegister = new System.Windows.Forms.Button();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -38,7 +38,7 @@
             this.rdBtMale = new System.Windows.Forms.RadioButton();
             this.label1 = new System.Windows.Forms.Label();
             this.lblAge = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.nmrAge = new System.Windows.Forms.NumericUpDown();
             this.txtBxLastName = new System.Windows.Forms.TextBox();
             this.lblLastName = new System.Windows.Forms.Label();
             this.txtBxFirstName = new System.Windows.Forms.TextBox();
@@ -46,21 +46,21 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Firstname = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FirstName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Country = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Age = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Gender = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Country = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Male = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grpBxRunnnerReg.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmrAge)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // grpBxRunnnerReg
             // 
-            this.grpBxRunnnerReg.Controls.Add(this.button1);
-            this.grpBxRunnnerReg.Controls.Add(this.cmbBxCountry);
+            this.grpBxRunnnerReg.Controls.Add(this.btnRegister);
+            this.grpBxRunnnerReg.Controls.Add(this.comboBox1);
             this.grpBxRunnnerReg.Controls.Add(this.label3);
             this.grpBxRunnnerReg.Controls.Add(this.textBox1);
             this.grpBxRunnnerReg.Controls.Add(this.label2);
@@ -68,7 +68,7 @@
             this.grpBxRunnnerReg.Controls.Add(this.rdBtMale);
             this.grpBxRunnnerReg.Controls.Add(this.label1);
             this.grpBxRunnnerReg.Controls.Add(this.lblAge);
-            this.grpBxRunnnerReg.Controls.Add(this.numericUpDown1);
+            this.grpBxRunnnerReg.Controls.Add(this.nmrAge);
             this.grpBxRunnnerReg.Controls.Add(this.txtBxLastName);
             this.grpBxRunnnerReg.Controls.Add(this.lblLastName);
             this.grpBxRunnnerReg.Controls.Add(this.txtBxFirstName);
@@ -80,23 +80,23 @@
             this.grpBxRunnnerReg.TabStop = false;
             this.grpBxRunnnerReg.Text = "Runner registration";
             // 
-            // button1
+            // btnRegister
             // 
-            this.button1.Location = new System.Drawing.Point(5, 386);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(132, 23);
-            this.button1.TabIndex = 13;
-            this.button1.Text = "Register";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnRegister.Location = new System.Drawing.Point(5, 386);
+            this.btnRegister.Name = "btnRegister";
+            this.btnRegister.Size = new System.Drawing.Size(132, 23);
+            this.btnRegister.TabIndex = 13;
+            this.btnRegister.Text = "Register";
+            this.btnRegister.UseVisualStyleBackColor = true;
+            this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
             // 
-            // cmbBxCountry
+            // comboBox1
             // 
-            this.cmbBxCountry.FormattingEnabled = true;
-            this.cmbBxCountry.Location = new System.Drawing.Point(5, 167);
-            this.cmbBxCountry.Name = "cmbBxCountry";
-            this.cmbBxCountry.Size = new System.Drawing.Size(132, 21);
-            this.cmbBxCountry.TabIndex = 12;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(5, 167);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(132, 21);
+            this.comboBox1.TabIndex = 12;
             // 
             // label3
             // 
@@ -163,18 +163,18 @@
             this.lblAge.TabIndex = 5;
             this.lblAge.Text = "Age:";
             // 
-            // numericUpDown1
+            // nmrAge
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(6, 222);
-            this.numericUpDown1.Minimum = new decimal(new int[] {
+            this.nmrAge.Location = new System.Drawing.Point(6, 222);
+            this.nmrAge.Minimum = new decimal(new int[] {
             10,
             0,
             0,
             0});
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(131, 20);
-            this.numericUpDown1.TabIndex = 4;
-            this.numericUpDown1.Value = new decimal(new int[] {
+            this.nmrAge.Name = "nmrAge";
+            this.nmrAge.Size = new System.Drawing.Size(131, 20);
+            this.nmrAge.TabIndex = 4;
+            this.nmrAge.Value = new decimal(new int[] {
             10,
             0,
             0,
@@ -224,15 +224,14 @@
             // 
             // dataGridView1
             // 
-            this.dataGridView1.AllowUserToOrderColumns = true;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Id,
-            this.Firstname,
+            this.FirstName,
             this.LastName,
-            this.Country,
             this.Age,
-            this.Gender});
+            this.Country,
+            this.Male});
             this.dataGridView1.Location = new System.Drawing.Point(7, 19);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersVisible = false;
@@ -241,51 +240,46 @@
             // 
             // Id
             // 
-            this.Id.HeaderText = "Id";
+            this.Id.HeaderText = "ID";
             this.Id.Name = "Id";
-            this.Id.ReadOnly = true;
             // 
-            // Name
+            // FirstName
             // 
-            this.Firstname.HeaderText = "Name";
-            this.Firstname.Name = "Name";
-            this.Firstname.ReadOnly = true;
+            this.FirstName.HeaderText = "FirstName";
+            this.FirstName.Name = "FirstName";
             // 
             // LastName
             // 
             this.LastName.HeaderText = "LastName";
             this.LastName.Name = "LastName";
-            this.LastName.ReadOnly = true;
+            // 
+            // Age
+            // 
+            this.Age.HeaderText = "Age";
+            this.Age.Name = "Age";
             // 
             // Country
             // 
             this.Country.HeaderText = "Country";
             this.Country.Name = "Country";
             // 
-            // Age
+            // Male
             // 
-            this.Age.HeaderText = "Age";
-            this.Age.Name = "Age";
-            this.Age.ReadOnly = true;
+            this.Male.HeaderText = "Male";
+            this.Male.Name = "Male";
             // 
-            // Gender
-            // 
-            this.Gender.HeaderText = "Gender";
-            this.Gender.Name = "Gender";
-            this.Gender.ReadOnly = true;
-            // 
-            // RunnersForm1
+            // RunnersForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.grpBxRunnnerReg);
-            this.Name = "RunnersForm1";
+            this.Name = "RunnersForm";
             this.Text = "Form1";
             this.grpBxRunnnerReg.ResumeLayout(false);
             this.grpBxRunnnerReg.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmrAge)).EndInit();
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
@@ -301,21 +295,21 @@
         private System.Windows.Forms.RadioButton rdBtMale;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblAge;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.NumericUpDown nmrAge;
         private System.Windows.Forms.TextBox txtBxLastName;
         private System.Windows.Forms.Label lblLastName;
         private System.Windows.Forms.TextBox txtBxFirstName;
         private System.Windows.Forms.Label lblFirstnName;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ComboBox cmbBxCountry;
+        private System.Windows.Forms.Button btnRegister;
+        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Firstname;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FirstName;
         private System.Windows.Forms.DataGridViewTextBoxColumn LastName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Country;
         private System.Windows.Forms.DataGridViewTextBoxColumn Age;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Gender;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Country;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Male;
     }
 }

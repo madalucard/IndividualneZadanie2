@@ -23,7 +23,6 @@ namespace FinishLine.Core
         /// <returns>List of Countries</returns>
         public static void LoadCountries()
         {
-            Countries = new List<Country>();
             using (var streamReader = new StreamReader(@"C:\Users\transformer3\source\repos\W3D5_IndividualProject2\Data\countries.csv"))
             using (var csvReader = new CsvReader(streamReader))
             {

@@ -8,6 +8,7 @@ namespace FinishLine.Core
 {
     public class Country
     {
+        
         public string CountryCode { get; set; }
         public string CountryNameSlovak { get; set; }
         public string CountryNameEnglish { get; set; }

@@ -11,23 +11,29 @@ using System.Windows.Forms;
 
 namespace FinishLine
 {
-    public partial class RunnersForm1 : Form
+    public partial class RunnersForm : Form
     {
-        public RunnersForm1()
-        {
-            InitializeComponent();
+        ViewModel _vm = new ViewModel();
 
-            // Working combobox inicializaion
-            foreach (var v in FileManager.Countries)
+        
+        
+        private void btnRegister_Click(object sender, EventArgs e)
+        {   
+            _vm.FirstName = txtBxFirstName.ToString();
+            _vm.LastName = txtBxLastName.ToString();
+            _vm.Country = comboBox1.Text;
+            _vm.Age = int.Parse(nmrAge.Value.ToString());
+            if (rdBtMale.Checked)
             {
-                cmbBxCountry.Items.Add(v.CountryNameEnglish);
+                _vm.IsMale = true;
             }
-           
+            else
+            {
+                _vm.IsMale = false;
+            }
+            _vm.AddRunner();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
+       
     }
 }

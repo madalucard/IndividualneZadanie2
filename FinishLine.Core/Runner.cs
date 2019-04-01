@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FinishLine.Core
 {
-    class Runner
+    public class Runner
     {
         public int Id { get; }
         public string IdToString
