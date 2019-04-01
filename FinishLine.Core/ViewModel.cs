@@ -16,11 +16,19 @@ namespace FinishLine.Core
         public string Country { get; set; }
         public bool IsMale { get; set; }
 
+        public ViewModel()
+        {
+            _rm.PopulateDB();
+        }
+
         public void AddRunner()
         {
             _rm.RunnerAdd(Id, FirstName, LastName, Country, Age, IsMale);
         }
-        public List<Runner> GetRunnersDb()
+
+        
+
+        public Dictionary<int, Runner> GetRunnersDb()
         {
             return _rm.GetRunnerDb();
         }

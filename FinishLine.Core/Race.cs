@@ -13,12 +13,6 @@ namespace FinishLine.Core
         public int LapNumber { get; set; }
         public int WinnersCount { get; set; }
 
-        public Race(List<Runner> winners, int lapDistance, int lapNumber, int winnersCount)
-        {
-            this.winners = winners;
-            LapDistance = lapDistance;
-            LapNumber = lapNumber;
-            WinnersCount = winnersCount;
-        }
+        
     }
 }

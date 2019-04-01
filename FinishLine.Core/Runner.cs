@@ -34,6 +34,21 @@ namespace FinishLine.Core
         public string Country { get; }
         public int Age { get; }
         public bool IsMale { get; }
+        public string IsMaleToString
+        {
+            get
+            {
+                if (IsMale)
+                {
+                    return "Male";
+                }
+                else
+                {
+                    return "Female";
+                }
+
+            }
+        }
 
         public Runner(int id, string firstName, string lastName, string country, int age, bool isMale)
         {
