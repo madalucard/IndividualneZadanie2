@@ -10,7 +10,7 @@ namespace FinishLine.Core
     {
         public int id { get; set; }
         public int lap { get; set; }
-        public TimeSpan time { get; set; } // lap time (4:30) per that one lap
+        public TimeSpan time { get; set; } // Time of that lap
         public TimeSpan overalTime { get; set; } // 
         public DateTime lapTime { get; set; } // lap time in normal format (14:34)
 

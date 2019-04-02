@@ -6,22 +6,22 @@ using System.Threading.Tasks;
 
 namespace FinishLine.Core
 {
-    public class Race
+    public static class Race
     {
-        List<Runner> _winners = new List<Runner>();
-        public float LapDistance { get; set; }
-        public int LapNumber { get; set; }
-        public int WinnersCount { get; set; }
-        public List<Statistic> _stats = new List<Statistic>();
-        public Dictionary<int, Runner> _dbRunners = new Dictionary<int, Runner>();
+        static List<Runner> _winners = new List<Runner>();
+        public static decimal LapDistance { get; set; }
+        public static decimal LapNumber { get; set; }
+        public static decimal WinnersCount { get; set; }
+        public static List<Statistic> _stats = new List<Statistic>();
+        public static Dictionary<int, Runner> _dbRunners = new Dictionary<int, Runner>();
 
-        public Race(float lapDistance, int lapNumber, int winnersCount, Dictionary<int, Runner> dbRunners)
-        {
-            LapDistance = lapDistance;
-            LapNumber = lapNumber;
-            WinnersCount = winnersCount;
-            _dbRunners = dbRunners;
-        }
+        //public Race(decimal lapDistance, decimal lapNumber, decimal winnersCount, Dictionary<int, Runner> dbRunners)
+        //{
+        //    LapDistance = lapDistance;
+        //    LapNumber = lapNumber;
+        //    WinnersCount = winnersCount;
+        //    _dbRunners = dbRunners;
+        //}
 
     }
 }

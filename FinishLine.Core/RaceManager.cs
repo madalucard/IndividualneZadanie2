@@ -8,13 +8,19 @@ namespace FinishLine.Core
 {
     public class RaceManager
     {
-        public Race race { get; set; }
-        public DateTime Start { get; set; }
+        //public Race RaceEvent { get; set; }
+        public DateTime Start { get { return DateTime.Now; } private set { } }
 
+        
+        /// <summary>
+        /// Sets starting time
+        /// </summary>
         public void StartRace()
         {
             Start = DateTime.Now;
         }
+
+
 
         public TimeSpan DoLap(int id)
         {
@@ -23,7 +29,7 @@ namespace FinishLine.Core
 
             int lapCount = 1;
             Statistic lastStatistic = null;
-            foreach (var item in race._stats)
+            foreach (var item in Race._stats)
             {
                 if (item.id == id)
                 {
@@ -43,7 +49,7 @@ namespace FinishLine.Core
             }
 
 
-            race._stats.Add(new Statistic(lapCount, asdf, timeElapsed, DateTime.Now, id));
+            Race._stats.Add(new Statistic(lapCount, asdf, timeElapsed, DateTime.Now, id));
 
             // return also lap count
             return asdf;

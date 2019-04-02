@@ -13,11 +13,22 @@ namespace FinishLine
 {
     public partial class MainView : Form
     {
-        RaceManager rm = new RaceManager();
+        RaceManager _rm = new RaceManager();
 
         public MainView()
-        {   
+        {
             InitializeComponent();
+            SetDataGridView1();
+
+
+        }
+        public void SetDataGridView1()
+        {
+            dataGridView1.Columns.Add("Id", "Id");
+            dataGridView1.Columns.Add("Lap", "Lap");
+            dataGridView1.Columns.Add("Time", "Time");
+            dataGridView1.Columns.Add("Overal Time", "Overal Time");
+            
             
         }
 
@@ -52,13 +63,18 @@ namespace FinishLine
 
         private void button1_Click(object sender, EventArgs e)
         {
-            var elapsedTime = rm.DoLap(int.Parse(textBox4.Text));
+            // var elapsedTime = _rm.DoLap(int.Parse(textBox4.Text));
+            // dataGridView1.Rows.Add(Race._dbRunners.Keys, _rm.Start);
             // TODO write elapsed time and id and lapCount
         }
 
         private void btnStartRace_Click(object sender, EventArgs e)
         {
-            rm.StartRace();
+            Race.LapDistance = nmrLapDistance.Value;
+            Race.LapNumber = nmrNumLaps.Value;
+            Race.WinnersCount = nmrNumWinners.Value;
+            lblTime.Text = _rm.Start.ToString();
+            _rm.StartRace();
         }
     }
 }
